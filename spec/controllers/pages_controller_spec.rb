@@ -30,5 +30,12 @@ describe PagesController do
       get 'timetable'
       response.should have_selector("title", content: "#{base_title} | Timetable")
     end
+    it "should return the right table headers" do
+      get 'timetable'
+      response.should have_selector("th", content: "Class")
+      response.should have_selector("th", content: "Time")
+      response.should have_selector("th", content: "Room")
+      response.should have_selector("th", content: "Teacher")
+    end
   end
 end
