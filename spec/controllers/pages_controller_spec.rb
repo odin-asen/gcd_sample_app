@@ -23,4 +23,11 @@ describe PagesController do
       response.should have_selector("title", content: "Ruby on Rails Tutorial Sample App | About")
     end
   end
+  
+  describe "GET 'timetable'" do
+    it "should return the right title" do
+      get 'timetable'
+      response.should have_selector("title", content: "Ruby on Rails Tutorial Sample App | Timetable")
+    end
+  end
 end
