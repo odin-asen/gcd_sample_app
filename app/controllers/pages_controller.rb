@@ -14,4 +14,8 @@ class PagesController < ApplicationController
   def timetable
     @title = "Timetable"
   end
+  
+  def help
+    @title = "Help"
+  end
 end

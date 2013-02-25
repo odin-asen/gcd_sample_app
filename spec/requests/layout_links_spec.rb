@@ -17,4 +17,8 @@ describe "LayoutLinks" do
     get '/timetable'
     response.should have_selector('title', :content => "Timetable")
   end
+  it "should have a help page at '/help' " do
+    get '/help'
+    response.should have_selector('title', :content => "Help")
+  end
 end
