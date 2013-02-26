@@ -47,3 +47,16 @@ def standardPageTest(shouldHavePage, page, selectorPair)
     response.should have_selector(selectorPair[0], selectorPair[1])
   end
 end
+
+# Standard test for page controllers
+# name is the controller name
+# itMessage is the displayed text that describes what the controller should do
+# selectorPair will be used as array in response.should have_selector arr[0], arr[1]
+def standardPageController(name, itMessage, selectorPair)
+  describe "GET '#{name}'" do
+    it itMessage do
+      get name
+      response.should have_selector(selectorPair[0], selectorPair[1])
+    end
+  end
+end

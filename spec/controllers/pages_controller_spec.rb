@@ -1,42 +1,20 @@
 require 'spec_helper'
 
 describe PagesController do
-  let(:base_title) { "Ruby on Rails Tutorial Sample App" }
+  base_title = "Ruby on Rails Tutorial Sample App"
   render_views
-  
-  describe "GET 'home'" do
-    it "should return the right title" do
-      get 'home'
-      response.should have_selector("title", content: "#{base_title} | Home")
-    end
-  end
+  standardPageController('home', "should return the right title",
+                         ['title', content: "#{base_title} | Home"])
+  standardPageController('contact', "should return the right title",
+                         ['title', content: "#{base_title} | Contact"])
+  standardPageController('about', "should return the right title",
+                         ['title', content: "#{base_title} | About"])
+  standardPageController('help', "should return the right title",
+                         ['title', content: "#{base_title} | Help"])
+  standardPageController('timetable', "should return the right title",
+                         ['title', content: "#{base_title} | Timetable"])
 
-  describe "GET 'contact'" do
-    it "should return the right title" do
-      get 'contact'
-      response.should have_selector("title", content: "#{base_title} | Contact")
-    end
-  end
-
-  describe "GET 'about'" do
-    it "should return the right title" do
-      get 'about'
-      response.should have_selector("title", content: "#{base_title} | About")
-    end
-  end
-  
-  describe "GET 'help'" do
-    it "should return the right title" do
-      get 'help'
-      response.should have_selector("title", content: "#{base_title} | Help")
-    end
-  end
-  
   describe "GET 'timetable'" do
-    it "should return the right title" do
-      get 'timetable'
-      response.should have_selector("title", content: "#{base_title} | Timetable")
-    end
     it "should return the right table headers" do
       get 'timetable'
       response.should have_selector("th", content: "Class")
