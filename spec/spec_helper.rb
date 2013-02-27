@@ -48,7 +48,7 @@ BASE_TITLE = "Ruby on Rails Tutorial Sample App"
 # shouldHavePage is the displayed text that describes what the page should have
 # page is the relative page path without leading / character
 # selectorPair will be used as array in response.should have_selector arr[0], arr[1]
-def standardPageTest(shouldHavePage, page, selectorPair)
+def testPageStandardIntegration(shouldHavePage, page, selectorPair)
   it "#{shouldHavePage} /#{page}" do
     get "/#{page}"
     response.should have_selector(selectorPair[0], selectorPair[1])
