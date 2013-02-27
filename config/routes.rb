@@ -1,4 +1,10 @@
 SampleApp::Application.routes.draw do
+  # user controller
+  
+  match '/signup', :to => 'user#new'
+  
+  # static pages
+  
   match '/contact', :to => 'pages#contact'
   match '/about', :to => 'pages#about'
   match '/help', :to => 'pages#help'
