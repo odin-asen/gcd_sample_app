@@ -1,18 +1,17 @@
 require 'spec_helper'
 
 describe PagesController do
-  base_title = "Ruby on Rails Tutorial Sample App"
   render_views
   standardPageController('home', "should return the right title",
-                         ['title', content: "#{base_title} | Home"])
+                         ['title', content: "#{BASE_TITLE} | Home"])
   standardPageController('contact', "should return the right title",
-                         ['title', content: "#{base_title} | Contact"])
+                         ['title', content: "#{BASE_TITLE} | Contact"])
   standardPageController('about', "should return the right title",
-                         ['title', content: "#{base_title} | About"])
+                         ['title', content: "#{BASE_TITLE} | About"])
   standardPageController('help', "should return the right title",
-                         ['title', content: "#{base_title} | Help"])
+                         ['title', content: "#{BASE_TITLE} | Help"])
   standardPageController('timetable', "should return the right title",
-                         ['title', content: "#{base_title} | Timetable"])
+                         ['title', content: "#{BASE_TITLE} | Timetable"])
 
   describe "GET 'timetable'" do
     it "should return the right table headers" do

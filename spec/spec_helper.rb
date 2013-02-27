@@ -37,6 +37,13 @@ RSpec.configure do |config|
   config.order = "random"
 end
 
+#--------------------------#
+# My Methods and Constants #
+#--------------------------#
+
+# Base title that can be used for a page in this application
+BASE_TITLE = "Ruby on Rails Tutorial Sample App"
+
 # Standard test for every page
 # shouldHavePage is the displayed text that describes what the page should have
 # page is the relative page path without leading / character
