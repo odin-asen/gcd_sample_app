@@ -11,4 +11,6 @@ describe "LayoutLinks" do
       ['title', content: "Timetable"]
   testPageStandardIntegration "should have a help page at", 'help',
       ['title', content: "Help"]
+  testPageStandardIntegration "should have a signup page at", 'signup',
+      ['title', content: "Sign up"]
 end
