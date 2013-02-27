@@ -2,16 +2,16 @@ require 'spec_helper'
 
 describe PagesController do
   render_views
-  standardPageController('home', "should return the right title",
-                         ['title', content: "#{BASE_TITLE} | Home"])
-  standardPageController('contact', "should return the right title",
-                         ['title', content: "#{BASE_TITLE} | Contact"])
-  standardPageController('about', "should return the right title",
-                         ['title', content: "#{BASE_TITLE} | About"])
-  standardPageController('help', "should return the right title",
-                         ['title', content: "#{BASE_TITLE} | Help"])
-  standardPageController('timetable', "should return the right title",
-                         ['title', content: "#{BASE_TITLE} | Timetable"])
+  testControllerActionStandard('home', "should return the right title",
+      ['title', content: "#{BASE_TITLE} | Home"])
+  testControllerActionStandard('contact', "should return the right title",
+      ['title', content: "#{BASE_TITLE} | Contact"])
+  testControllerActionStandard('about', "should return the right title",
+      ['title', content: "#{BASE_TITLE} | About"])
+  testControllerActionStandard('help', "should return the right title",
+      ['title', content: "#{BASE_TITLE} | Help"])
+  testControllerActionStandard('timetable', "should return the right title",
+      ['title', content: "#{BASE_TITLE} | Timetable"])
 
   describe "GET 'timetable'" do
     it "should return the right table headers" do

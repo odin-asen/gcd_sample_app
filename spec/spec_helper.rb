@@ -44,7 +44,7 @@ end
 # Base title that can be used for a page in this application
 BASE_TITLE = "Ruby on Rails Tutorial Sample App"
 
-# Standard test for every page
+# Standard integration test for every page
 # shouldHavePage is the displayed text that describes what the page should have
 # page is the relative page path without leading / character
 # selectorPair will be used as array in response.should have_selector arr[0], arr[1]
@@ -55,11 +55,11 @@ def standardPageTest(shouldHavePage, page, selectorPair)
   end
 end
 
-# Standard test for page controllers
+# Standard test for a controller action
 # name is the controller name
 # itMessage is the displayed text that describes what the controller should do
 # selectorPair will be used as array in response.should have_selector arr[0], arr[1]
-def standardPageController(name, itMessage, selectorPair)
+def testControllerActionStandard(name, itMessage, selectorPair)
   describe "GET '#{name}'" do
     it itMessage do
       get name
