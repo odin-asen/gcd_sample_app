@@ -11,6 +11,8 @@ SampleApp::Application.routes.draw do
   match '/timetable', :to => 'pages#timetable'
   root :to => 'pages#home'
 
+  resources :users
+  
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
