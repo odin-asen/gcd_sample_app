@@ -2,8 +2,14 @@ require 'spec_helper'
 
 describe UsersController do
   render_views
-  testControllerActionStandard :new, "should return the right title",
-                         ['title', content: "#{BASE_TITLE} | Sign up"]
+  
+  describe "GET 'new'" do
+    it "should return the right title" do
+      get :new
+      response.should have_selector('title', content: "#{BASE_TITLE} | Sign up")
+    end
+  end
+
   describe "GET 'show'" do
     before(:each) do
       @user = FactoryGirl.create(:user)
